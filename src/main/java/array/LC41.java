@@ -1,4 +1,4 @@
-package OOD;
+package array;
 
 public class LC41 {
     public static int firstMissingPositive(int[] nums) {
