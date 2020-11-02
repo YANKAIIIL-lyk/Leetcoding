@@ -1,11 +1,8 @@
 package OOD;
 
-<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-=======
->>>>>>> LC380
 import java.util.*;
 
 public class LC380{
