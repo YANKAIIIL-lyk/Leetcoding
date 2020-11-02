@@ -1,8 +1,11 @@
 package OOD;
 
+<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+=======
+>>>>>>> LC380
 import java.util.*;
 
 public class LC380{
@@ -34,8 +37,8 @@ class RandomizedSet {
 
     /** Initialize your data structure here. */
     public RandomizedSet() {
-        map = new HashMap<>();
-        list = new ArrayList<>();
+        map = new HashMap<Integer, Integer>();
+        list = new ArrayList<Integer>();
         rand = new Random();
     }
 
