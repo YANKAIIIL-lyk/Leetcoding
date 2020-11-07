@@ -1,11 +1,11 @@
 package string;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+
 public class LC394 {
-    public static void main(String[] args) {
-        String input = "3[a]2[bc]";
-        String result = decodeString(input);
-        System.out.println(result);
-    }
     public static String decodeString(String s) {
         StringBuilder sb = new StringBuilder();
         int i = 0;
