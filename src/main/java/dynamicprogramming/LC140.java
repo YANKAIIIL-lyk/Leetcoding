@@ -64,4 +64,44 @@ public class LC140 {
         }
         return memo.get(pos);
     }
+
+    /**
+     * We can also traversing from back to start. The performance is slightly better but we need to handle
+     * the corner case when index = 0. Otherwise it will fail.
+     */
+    public List<String> wordBreak1(String s, List<String> wordDict) {
+        Set<String> set = new HashSet<>(wordDict);
+        Map<Integer, List<List<String>>> memo = new HashMap<>();
+        List<List<String>> init = new ArrayList<>();
+        init.add(new ArrayList<>());
+        memo.put(0, init);
+        dfs1(memo, s.length(), set, s);
+        List<String> res = new ArrayList<>();
+        for(List<String> temp : memo.get(s.length())){
+            String str = String.join(" ", temp);
+            res.add(str);
+        }
+        return res;
+    }
+
+    private List<List<String>> dfs1(Map<Integer, List<List<String>>> memo, int index, Set<String> set, String s){
+        if(memo.containsKey(index)){
+            return memo.get(index);
+        }
+        List<List<String>> res = new ArrayList<>();
+        for(int i = index;i >= 0;i--){
+            String pattern = s.substring(i, index);
+            if(!set.contains(pattern)){
+                continue;
+            }
+            List<List<String>> pasts = dfs1(memo, i, set, s);
+            for(List<String> past: pasts){
+                List<String> temp = new ArrayList<>(past);
+                temp.add(pattern);
+                res.add(temp);
+            }
+        }
+        memo.put(index, res);
+        return res;
+    }
 }
