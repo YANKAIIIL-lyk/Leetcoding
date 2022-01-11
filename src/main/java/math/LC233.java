@@ -4,6 +4,7 @@ package math;
  * Count all the digits one by one
  */
 public class LC233 {
+
     public int countDigitOne(int n) {
         if(n == 0){
             return 0;
